@@ -8,6 +8,7 @@ import {
   useGetTodosQuery,
 } from "@/redux/api/todo";
 import { usePostUplaudMutation } from "@/redux/api/file";
+import Image from "next/image";
 
 const TodoList: FC = () => {
   const { register, handleSubmit, setValue } = useForm<ITodo>();
@@ -58,10 +59,11 @@ const TodoList: FC = () => {
             ) : (
               <div key={el._id} className={scss.top}>
                 <h4>{el.title}</h4>
-                <img
-                  style={{ width: 200, height: 300 }}
+                <Image
                   src={el.img}
                   alt="img"
+                  width={200}
+                  height={300}
                 />
 
                 <div className={scss.btn}>
